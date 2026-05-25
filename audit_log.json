@@ -1,0 +1,3906 @@
+[
+  {
+    "timestamp": "2025-10-29T02:25:07.122351Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:27:43.937719Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "Coco",
+    "actor_dni": "27645312",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:28:03.067135Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Coco",
+    "actor_dni": "27645312",
+    "details": {
+      "filename": "763ceb584c0c424cacf5761d22f4daaf.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.46 (2).jpeg",
+      "amount": 245000.0,
+      "category": "Peajes",
+      "date": "2025-10-06"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:28:23.090384Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Coco",
+    "actor_dni": "27645312",
+    "details": {
+      "filename": "c86fa1a5de0d4d33be2ec294c80ccb3b.jpeg",
+      "original_name": "WhatsApp Image 2023-11-01 at 09.08.17.jpeg",
+      "amount": 175622.0,
+      "category": "Gomeria",
+      "date": "2025-10-23"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:28:28.477689Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "Coco",
+    "actor_dni": "27645312",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:28:49.012629Z",
+    "action": "delete",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "id": "",
+      "filename": "281e900cf8b94a748bf629cee187a77f.jpeg",
+      "dni": "28333555"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:28:52.077182Z",
+    "action": "delete",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "id": "",
+      "filename": "46451b0b72d24da099226519bf36304a.jpeg",
+      "dni": "28333555"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:28:59.354643Z",
+    "action": "delete",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "id": "",
+      "filename": "c10cd200fb0e42b6a6bcc3b777cad8dc.jpeg",
+      "dni": "368894652"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:29:15.301356Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "12580345",
+      "count": 1
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:29:17.145108Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:37:16.303383Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:42:26.883985Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:43:15.647419Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:43:47.957812Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "Bulma",
+    "actor_dni": "20346578",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:44:03.957339Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Bulma",
+    "actor_dni": "20346578",
+    "details": {
+      "filename": "3d23c0d125cb4b1283eafa53562ecd19.jpeg",
+      "original_name": "WhatsApp Image 2023-10-25 at 09.55.00.jpeg",
+      "amount": 0.22,
+      "category": "Gomeria",
+      "date": "2025-10-22"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:44:19.488246Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Bulma",
+    "actor_dni": "20346578",
+    "details": {
+      "filename": "01e739eb2e864ca7a4a076c24e719f6a.jpeg",
+      "original_name": "WhatsApp Image 2023-06-15 at 08.42.02 (1).jpeg",
+      "amount": 197666.0,
+      "category": "Otros",
+      "date": "2025-10-27"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:44:43.264114Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Bulma",
+    "actor_dni": "20346578",
+    "details": {
+      "filename": "d2a775d3504a4d188fcd1e87f27fbfb8.jpeg",
+      "original_name": "WhatsApp Image 2023-06-01 at 17.23.37.jpeg",
+      "amount": 175666.0,
+      "category": "Peajes",
+      "date": "2025-10-28"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:45:25.112269Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Bulma",
+    "actor_dni": "20346578",
+    "details": {
+      "filename": "d0a6c9375ce447629940ff28d81ed2d3.jpeg",
+      "original_name": "WhatsApp Image 2023-10-24 at 11.00.20.jpeg",
+      "amount": 10.0,
+      "category": "Gomeria",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:45:50.901470Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "Bulma",
+    "actor_dni": "20346578",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:46:14.035259Z",
+    "action": "delete",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "id": "3d23c0d125cb4b1283eafa53562ecd19",
+      "filename": "3d23c0d125cb4b1283eafa53562ecd19.jpeg",
+      "dni": "20346578"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:46:17.894996Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:48:00.945924Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:50:19.599197Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "leono",
+    "actor_dni": "41679855",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:57:09.691884Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "leono",
+    "actor_dni": "41679855",
+    "details": {
+      "filename": "fa20f341b385405f832ea46456f320aa.jpeg",
+      "original_name": "WhatsApp Image 2025-10-24 at 11.18.09.jpeg",
+      "amount": 10000.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:57:14.546134Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "leono",
+    "actor_dni": "41679855",
+    "details": {
+      "id": "fa20f341b385405f832ea46456f320aa"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:57:24.271735Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "leono",
+    "actor_dni": "41679855",
+    "details": {
+      "filename": "e83f0f8d1f184da7af4fa65c9105395f.jpeg",
+      "original_name": "WhatsApp Image 2023-08-14 at 14.51.46.jpeg",
+      "amount": 1500.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:57:25.961072Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "leono",
+    "actor_dni": "41679855",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:57:49.216907Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "Yamal",
+    "actor_dni": "20346500",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T02:58:06.734499Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Yamal",
+    "actor_dni": "20346500",
+    "details": {
+      "filename": "1c338c770ea24686957ef3ad79069b66.jpeg",
+      "original_name": "WhatsApp Image 2023-08-14 at 15.21.22.jpeg",
+      "amount": 279645.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T02:59:21.754374Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Yamal",
+    "actor_dni": "20346500",
+    "details": {
+      "filename": "1a47d35c9a2b42d2a522411d76de9155.jpeg",
+      "original_name": "WhatsApp Image 2023-06-03 at 09.31.16.jpeg",
+      "amount": 1.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T03:01:19.495317Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "Yamal",
+    "actor_dni": "20346500",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:03:23.176912Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:03:58.129421Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "bomba tucumana",
+    "actor_dni": "346653788",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:04:41.654134Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "bomba tucumana",
+    "actor_dni": "346653788",
+    "details": {
+      "filename": "0569b6d483c24fe48264a838c7f42ca7.jpeg",
+      "original_name": "WhatsApp Image 2025-09-01 at 14.15.59.jpeg",
+      "amount": 1500.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T03:04:53.366093Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "bomba tucumana",
+    "actor_dni": "346653788",
+    "details": {
+      "filename": "8cedaf4f7c5642e397a5d2e07e50be29.jpeg",
+      "original_name": "WhatsApp Image 2025-06-27 at 15.21.30 (1).jpeg",
+      "amount": 1.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T03:05:17.079674Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "bomba tucumana",
+    "actor_dni": "346653788",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:06:38.876294Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:08:36.768184Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:17:53.249545Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "locounpoco",
+    "actor_dni": "21555000",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T03:18:48.633760Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "locounpoco",
+    "actor_dni": "21555000",
+    "details": {
+      "filename": "3660250134fd4432b5543fbfa9247cdc.jpg",
+      "original_name": "17617078990205795351393083488180.jpg",
+      "amount": 12500.0,
+      "category": "Peajes",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T03:18:55.507340Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "locounpoco",
+    "actor_dni": "21555000",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:00:16.221305Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "MAnuel Sosa",
+    "actor_dni": "25785976",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:00:49.379295Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MAnuel Sosa",
+    "actor_dni": "25785976",
+    "details": {
+      "filename": "fea5652b187c4b3aaf2cb6b2491dc6d5.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.47 (2).jpeg",
+      "amount": 15000.0,
+      "category": "Peajes",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T14:01:08.967961Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "MAnuel Sosa",
+    "actor_dni": "25785976",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:25:35.097436Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:25:36.660428Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:32:41.712856Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "casemiro ramon",
+    "actor_dni": "24885566",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:33:23.293041Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "casemiro ramon",
+    "actor_dni": "24885566",
+    "details": {
+      "filename": "5b8e2a4f0e5f4f14a0c1db52306a1d5f.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02.jpeg",
+      "amount": 21000.0,
+      "category": "Peajes",
+      "date": "2025-10-16"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T14:34:05.532942Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "casemiro ramon",
+    "actor_dni": "24885566",
+    "details": {
+      "filename": "4d309a780f294f96a2f841ac8585f8e3.jpeg",
+      "original_name": "WhatsApp Image 2025-07-15 at 09.04.21.jpeg",
+      "amount": 1.0,
+      "category": "Descargas",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T14:34:25.135745Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "casemiro ramon",
+    "actor_dni": "24885566",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:41:48.286272Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:43:12.761318Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:43:37.287073Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:43:52.214626Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "coco",
+    "actor_dni": "41558877",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T14:46:29.237425Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "coco",
+    "actor_dni": "41558877",
+    "details": {
+      "filename": "ac8cfa4483044ba79b2490679244e9ea.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.46 (1).jpeg",
+      "amount": 200.0,
+      "category": "Otros",
+      "date": "2025-10-15"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T14:46:47.427132Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "coco",
+    "actor_dni": "41558877",
+    "details": {
+      "filename": "3ca22405b42e4351950ad9e88ee369bb.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.45 (1).jpeg",
+      "amount": 18000.0,
+      "category": "Otros",
+      "date": "2025-10-02"
+    }
+  },
+  {
+    "timestamp": "2025-10-29T14:50:58.807565Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "coco",
+    "actor_dni": "41558877",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-29T15:00:25.498292Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:15:27.043434Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "marta sussana",
+    "actor_dni": "38556699",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:15:55.900529Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "marta sussana",
+    "actor_dni": "38556699",
+    "details": {
+      "filename": "b17d5a2a5fcb4721aebd03b810e5eaf6.jpeg",
+      "original_name": "WhatsApp Image 2025-07-29 at 09.57.08 (1).jpeg",
+      "amount": 1500.0,
+      "category": "Peajes",
+      "date": "2025-10-14"
+    }
+  },
+  {
+    "timestamp": "2025-10-30T15:16:26.402077Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "marta sussana",
+    "actor_dni": "38556699",
+    "details": {
+      "filename": "62387c6ce7eb41d5aa0742259645d39f.jpeg",
+      "original_name": "WhatsApp Image 2025-08-07 at 16.46.45.jpeg",
+      "amount": 15000.0,
+      "category": "Gomeria",
+      "date": "2025-10-30"
+    }
+  },
+  {
+    "timestamp": "2025-10-30T15:16:39.102236Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "marta sussana",
+    "actor_dni": "38556699",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:18:46.521404Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:19:48.325502Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:20:01.357231Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "christian",
+    "actor_dni": "245556699",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:24:14.461972Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "christian",
+    "actor_dni": "245556699",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:30:05.703948Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "248855669",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:30:34.249576Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "248855669",
+    "details": {
+      "filename": "e7cfddd20e3e4c9a883f4db8c0379480.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20.jpeg",
+      "amount": 15000.0,
+      "category": "Descargas",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-30T15:39:21.119102Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "248855669",
+    "details": {
+      "filename": "b234606830e34a4fa8c2f27e251eb531.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.44.jpeg",
+      "amount": 30000.0,
+      "category": "Otros",
+      "date": "2025-10-30"
+    }
+  },
+  {
+    "timestamp": "2025-10-30T15:39:28.714745Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "248855669",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:47:21.980917Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T15:48:52.161280Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-30T16:33:37.912914Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:01:16.709051Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "34000225",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:05:13.262232Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "34000225",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:09:46.961952Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "34000225",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:10:04.122321Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "Patricio",
+    "actor_dni": "34000225",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:22:18.133373Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:34:08.419355Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:34:31.889790Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "05773d1906a24ad8898578ad0daf8b3a.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20 (1).jpeg",
+      "amount": 20000.0,
+      "category": "Otros",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-10-31T02:34:37.580568Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:52:37.501000Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:52:49.348749Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:53:35.920082Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T02:57:18.686929Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:12:29.043925Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:13:57.673099Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:16:24.962171Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:19:48.667079Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:19:53.614759Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:22:18.482240Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:22:26.225589Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T03:32:29.911681Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:06:46.391861Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:16:51.277853Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:23:32.090450Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:23:50.771057Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:27:56.094378Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:28:26.599487Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:28:32.291370Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:28:40.090158Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:29:05.603137Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:29:30.461221Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-10-31T17:29:43.325769Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "b7479d0961d646aba017bea8d0dbcdd8.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20 (1).jpeg",
+      "amount": 1.0,
+      "category": "Combustible",
+      "date": "2025-10-07"
+    }
+  },
+  {
+    "timestamp": "2025-10-31T17:29:46.794673Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:16:39.962111Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "245556699",
+      "employee_name": "christian"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:17:45.747649Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "20346578",
+      "employee_name": "Bulma"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:17:47.937001Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:22:43.328346Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:42:47.732125Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "28333555",
+      "employee_name": "Coco"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:42:54.415670Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "27645312",
+      "employee_name": "Coco"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:00.500520Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "368894652",
+      "employee_name": "Jose Pepe"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:09.177343Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "34000225",
+      "employee_name": "Patricio"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:14.491605Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25785976",
+      "employee_name": "MAnuel Sosa"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:19.131185Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "26445550",
+      "employee_name": "Kanelones Ramiro"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:24.349941Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "41000334",
+      "employee_name": "Mirna Perez"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:29.849178Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "38556699",
+      "employee_name": "marta sussana"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:35.264645Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "12580345",
+      "employee_name": "kirino tames"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:40.056818Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "41558877",
+      "employee_name": "coco"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:45.489140Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "346653788",
+      "employee_name": "bomba tucumana"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:49.641211Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "30123456",
+      "employee_name": "kakaroto"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:43:55.372054Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "20346500",
+      "employee_name": "Yamal"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:44:00.711393Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "24885566",
+      "employee_name": "casemiro ramon"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:44:06.726453Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "248855669",
+      "employee_name": "Patricio"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:44:12.367783Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "48009955",
+      "employee_name": "lalo landa"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:44:16.944798Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "21555000",
+      "employee_name": "locounpoco"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:44:23.196397Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "41679855",
+      "employee_name": "leono"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:44:29.463577Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:45:02.284907Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:45:09.027982Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:45:27.473109Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "a1e244d3c41b4fc3b110798ccc96231f.jpeg",
+      "original_name": "WhatsApp Image 2025-07-29 at 09.57.08 (1) (1).jpeg",
+      "amount": 1.0,
+      "category": "Combustible",
+      "date": "2025-11-07"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T17:46:30.331215Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:46:35.250364Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:47:45.755436Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:48:15.902194Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:57:00.667227Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:57:06.168176Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:58:40.377943Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:59:07.003332Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:59:21.145626Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T17:59:34.629438Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:00:41.478934Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "26684405",
+      "employee_name": "CANSINO ARIEL EDGARDO"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:00:47.124760Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25862072",
+      "employee_name": "CARRIZO DIEGO FERNANDO"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:00:51.440711Z",
+    "action": "delete_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "38216403",
+      "employee_name": "RUIZ JUAN MARTIN"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:00:53.770147Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:01:15.787959Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:01:37.962106Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "af98dcb3d71e4d85a15bbfe13269243b.jpeg",
+      "original_name": "WhatsApp Image 2025-09-12 at 16.16.21.jpeg",
+      "amount": 1000.0,
+      "category": "Combustible",
+      "date": "2025-10-29"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:02:50.983526Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:03:25.569830Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:03:56.973179Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:04:13.790906Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "b31bd9ef985e4eae814b1576814e5995.jpeg",
+      "original_name": "WhatsApp Image 2025-10-27 at 12.57.55.jpeg",
+      "amount": 1000.0,
+      "category": "Combustible",
+      "date": "2025-10-23"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:05:58.595489Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:06:19.539796Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:06:34.177861Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "22969517342644b8b77e9ce07c891bd5.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20.jpeg",
+      "amount": 14500.0,
+      "category": "Peajes",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:07:46.051701Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:09:58.530691Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:10:15.408812Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "4fe65303b1894ac4929038345c006f93.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.48 (1).jpeg",
+      "amount": 2000.0,
+      "category": "Peajes",
+      "date": "2025-10-22"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:10:20.361882Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:10:35.370122Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:10:39.972991Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "id": "4fe65303b1894ac4929038345c006f93",
+      "filename": "4fe65303b1894ac4929038345c006f93.jpeg"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:10:41.697601Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:10:58.136538Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:11:15.714397Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "eea5b6cd6dd94ddeabf0921b20c5ee8d.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.01.jpeg",
+      "amount": 2000.0,
+      "category": "Peajes",
+      "date": "2025-10-30"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:11:33.216460Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "ee351088cefe4838aeb4ae3db7e05dc7.jpeg",
+      "original_name": "WhatsApp Image 2025-07-21 at 16.45.39.jpeg",
+      "amount": 1000.0,
+      "category": "Peajes",
+      "date": "2025-10-24"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:11:38.848402Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:12:25.154378Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:12:40.134688Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "ffbe0faff2a2491996ff29a1fac81165.jpeg",
+      "original_name": "WhatsApp Image 2023-10-24 at 11.00.20 (1).jpeg",
+      "amount": 1500.0,
+      "category": "Peajes",
+      "date": "2025-10-17"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:12:56.996282Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "2a364cb3df55405495a6739e30a3e951.jpeg",
+      "original_name": "WhatsApp Image 2025-08-27 at 14.54.23.jpeg",
+      "amount": 25000.0,
+      "category": "Peajes",
+      "date": "2025-10-28"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:13:12.988776Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "2ccca29f2b1b4405bf059835563cb6fe.jpeg",
+      "original_name": "WhatsApp Image 2025-06-12 at 15.31.19.jpeg",
+      "amount": 3000.0,
+      "category": "Peajes",
+      "date": "2025-10-26"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:13:16.922055Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "id": "2ccca29f2b1b4405bf059835563cb6fe",
+      "filename": "2ccca29f2b1b4405bf059835563cb6fe.jpeg"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:13:32.467256Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "e3a69ebf73ad4f65a033adf555199cec.jpeg",
+      "original_name": "WhatsApp Image 2025-06-04 at 10.40.57.jpeg",
+      "amount": 2000.0,
+      "category": "Peajes",
+      "date": "2025-10-30"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:13:38.491602Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "id": "e3a69ebf73ad4f65a033adf555199cec",
+      "filename": "e3a69ebf73ad4f65a033adf555199cec.jpeg"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:13:53.877549Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "9fa59ae43f844d0ea24ac4708d6f5201.jpeg",
+      "original_name": "WhatsApp Image 2025-04-24 at 22.50.29.jpeg",
+      "amount": 1.0,
+      "category": "Otros",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T18:14:00.799636Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T18:14:19.026316Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T19:25:20.222169Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "GOMEZ JUAN RAFAEL",
+    "actor_dni": "25498853",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T19:25:37.886863Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "GOMEZ JUAN RAFAEL",
+    "actor_dni": "25498853",
+    "details": {
+      "filename": "f2276ba4054344e589005a849f5be42a.jpeg",
+      "original_name": "WhatsApp Image 2023-06-01 at 17.49.48.jpeg",
+      "amount": 18000.0,
+      "category": "Peajes",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T19:25:40.988453Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "GOMEZ JUAN RAFAEL",
+    "actor_dni": "25498853",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T19:25:52.050298Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T19:26:06.405245Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {
+      "filename": "83bc22becb4f472c90b88149f3e3eab1.jpeg",
+      "original_name": "WhatsApp Image 2023-06-28 at 14.26.33.jpeg",
+      "amount": 30000.0,
+      "category": "Mecanica",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T19:26:11.187214Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {
+      "id": "83bc22becb4f472c90b88149f3e3eab1",
+      "filename": "83bc22becb4f472c90b88149f3e3eab1.jpeg"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T19:26:24.222551Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {
+      "filename": "6a501b7699a3439cb29063fbbbcc1741.jpeg",
+      "original_name": "WhatsApp Image 2023-06-03 at 09.27.28.jpeg",
+      "amount": 8000.0,
+      "category": "Mecanica",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-01T19:26:27.275084Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T19:26:39.793646Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-01T19:27:17.003775Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:29:15.549996Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:29:32.589060Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {
+      "filename": "f7b5b5b9144946088371d47f7ad0c3ad.jpeg",
+      "original_name": "WhatsApp Image 2025-06-23 at 17.09.55.jpeg",
+      "amount": 30000.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T01:29:36.791422Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "LEYES OSVALDO OSCAR",
+    "actor_dni": "25058170",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:30:17.580912Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:30:26.062854Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:30:50.227904Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:37:33.735121Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:40:28.982748Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:40:32.595349Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:46:30.681412Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T01:58:30.830983Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T02:01:07.845937Z",
+    "action": "add_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "34763820",
+      "name": "MEDINA NICOLAS JOSE BERNARDO",
+      "cuil": "30347638203"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T02:01:16.726796Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T02:04:55.356172Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T02:05:15.563044Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "e245f413ace24cdabdef9b26cec6cf47.jpeg",
+      "original_name": "WhatsApp Image 2025-06-23 at 17.10.10 (2).jpeg",
+      "amount": 9000.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T02:05:17.829042Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T02:05:42.970011Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:05:53.103788Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:08:29.686015Z",
+    "action": "update_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "26684405",
+      "name": "CANSINO ARIEL EDGARDO",
+      "cuil": "30266844055"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:08:43.749080Z",
+    "action": "update_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25862072",
+      "name": "CARRIZO DIEGO FERNANDO",
+      "cuil": "20258620720"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:08:55.803860Z",
+    "action": "update_employee",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25498853",
+      "name": "GOMEZ JUAN RAFAEL",
+      "cuil": "20254988535"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:09:22.912461Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:10:13.360250Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:15:13.278055Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:22:01.621967Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:22:13.535396Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:25:05.294294Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:26:25.040073Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:26:40.961096Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "d8ae32b72407483d8592a6b224fd4563.jpeg",
+      "original_name": "WhatsApp Image 2023-10-24 at 11.00.20 (1).jpeg",
+      "amount": 1500.0,
+      "category": "Peajes",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:27:03.935353Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "2d3952d6622544eab07d53410d8dff92.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.46.jpeg",
+      "amount": 3000.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:27:10.649611Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:28:46.403232Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:30:28.818926Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:30:39.544135Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:31:02.500144Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "635ad2ef1fce4f37950ca779c971f0a2.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.45.jpeg",
+      "amount": 170000.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:31:05.553631Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:33:56.675116Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:39:21.732351Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:39:40.908493Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "a4910f9cc33949c7a4dff5acfc625c9b.jpeg",
+      "original_name": "WhatsApp Image 2025-10-31 at 11.10.48.jpeg",
+      "amount": 653000.0,
+      "category": "Combustible",
+      "date": "2025-10-15"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:40:26.948795Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:40:58.399631Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:43:26.489245Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:43:36.522534Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:43:57.110408Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "397bc310b19341f3a078fb7723dc1c88.jpeg",
+      "original_name": "WhatsApp Image 2025-06-12 at 09.12.52.jpeg",
+      "amount": 340000.0,
+      "category": "Combustible",
+      "date": "2025-10-19"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:44:05.558105Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "id": "397bc310b19341f3a078fb7723dc1c88",
+      "filename": "397bc310b19341f3a078fb7723dc1c88.jpeg"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:44:19.907225Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "0cdc738e4dc84730bee24106ca1449eb.jpeg",
+      "original_name": "WhatsApp Image 2025-10-31 at 11.10.48.jpeg",
+      "amount": 1.0,
+      "category": "Combustible",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:44:27.454951Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:45:29.503062Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:45:40.174669Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:46:42.923039Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:49:11.536464Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:49:20.648367Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:49:40.405273Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "245020f4c72041cc8aeb9a89b7c04de2.jpeg",
+      "original_name": "WhatsApp Image 2025-07-21 at 16.45.39.jpeg",
+      "amount": 90000.0,
+      "category": "Combustible",
+      "date": "2025-10-30"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:49:44.220352Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:52:00.915335Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:52:10.587795Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:52:27.853664Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "5f267a665a0e41b4b0ba3740b1d5f7bb.jpeg",
+      "original_name": "WhatsApp Image 2023-12-21 at 14.30.11 (1).jpeg",
+      "amount": 1500.0,
+      "category": "Combustible",
+      "date": "2025-10-28"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:52:42.499548Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:54:50.227142Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:56:34.868460Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:56:44.017720Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:57:30.630394Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:59:01.732696Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:59:12.106273Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T16:59:29.412728Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "11c306a51cf84da2a4bc268b55ac278b.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20.jpeg",
+      "amount": 1.0,
+      "category": "Combustible",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T16:59:38.030041Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T17:03:53.588442Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T17:05:13.487577Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T17:05:25.847496Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "9c8fb77ea4c24261ba6aed9c2eaf13ef.jpeg",
+      "original_name": "WhatsApp Image 2023-12-21 at 14.30.11 (1).jpeg",
+      "amount": 1.0,
+      "category": "Combustible",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-02T17:05:29.912356Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-02T17:06:01.729001Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:05:05.305493Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:07:47.395045Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:08:41.314262Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "afc02ab779834b93924f2a34878339ac.jpeg",
+      "original_name": "WhatsApp Image 2025-10-14 at 09.46.35.jpeg",
+      "amount": 2000.0,
+      "category": "Peajes",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:15:43.246579Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "6efbf87fe1d94bd39256bb1f6a259ee6.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20 (1).jpeg",
+      "amount": 1.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:15:55.302900Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:17:07.572914Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:18:42.388998Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:25:23.666822Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:27:27.222128Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:29:06.202879Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:29:27.547755Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "9a19f9ee0e134cfb9e96374c1c5b9fd0.jpeg",
+      "original_name": "WhatsApp Image 2025-10-31 at 11.10.48.jpeg",
+      "amount": 1.0,
+      "category": "Peajes",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:36:35.151091Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "7815d99240854b54bec74900cb3d6469.jpeg",
+      "original_name": "WhatsApp Image 2025-10-31 at 11.10.48.jpeg",
+      "amount": 30000.0,
+      "category": "Peajes",
+      "date": "2025-10-13"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:36:38.590387Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:37:55.015287Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:37:57.379029Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:38:20.702094Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "fa14ae420106429f8335493e632ce914.jpeg",
+      "original_name": "WhatsApp Image 2023-10-24 at 11.00.20 (1).jpeg",
+      "amount": 20000.0,
+      "category": "Combustible",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:38:33.249943Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:39:02.959290Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:40:14.543875Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:40:39.686730Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "b5b4fdff88d54f6eb559f821a631fc03.jpeg",
+      "original_name": "WhatsApp Image 2025-10-27 at 12.57.55.jpeg",
+      "amount": 300000.0,
+      "category": "Combustible",
+      "date": "2025-10-06"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:40:48.643521Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:42:13.547792Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25862072",
+      "count": 4
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:42:18.953636Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:42:29.738538Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:42:51.083873Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "49876a710073418ebd5843a161d98e72.jpeg",
+      "original_name": "WhatsApp Image 2025-10-31 at 11.10.48.jpeg",
+      "amount": 1500.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:42:54.276878Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:44:49.099516Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:44:57.937541Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:45:14.927081Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "7a75350e6e314e62b0c45a28c177ea39.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 3000.0,
+      "category": "Gastos Fronteras",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:45:18.088661Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:49:28.597843Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25862072",
+      "count": 2
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:49:32.259061Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:49:34.894648Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:49:45.292996Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "827894e995cd40eba70cf8aa4ebcbce3.jpeg",
+      "original_name": "WhatsApp Image 2025-07-29 at 09.57.08 (1) (1).jpeg",
+      "amount": 39000.0,
+      "category": "Mecanica",
+      "date": "2025-11-03"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:49:55.531654Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:50:17.441307Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:50:22.126090Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:50:36.682524Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "55330e094cf647d6af7b6aaebc2668b4.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 1500.0,
+      "category": "Gomeria",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:50:40.315988Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:50:50.980981Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25862072",
+      "count": 2
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:50:54.593352Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:50:57.209089Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:51:07.140524Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "d434995d9fd94be48ef02b30e66e95b0.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20 (1).jpeg",
+      "amount": 3000.0,
+      "category": "Descargas",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T00:51:09.665022Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:51:25.517349Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T00:53:43.395773Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:00:45.950984Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:02:50.219598Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:02:53.086578Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:03:09.687789Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "e65397baec9646a1a2ab2474381d9866.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20 (1).jpeg",
+      "amount": 1.0,
+      "category": "Peajes",
+      "date": "2025-11-02"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:03:23.599829Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "a89ff687105d4c67b8b0e3878aef2688.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 1.0,
+      "category": "Otros",
+      "date": "2025-10-15"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:03:26.020084Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:12:45.357535Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "26684405",
+      "count": 15
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:12:53.506505Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25862072",
+      "count": 3
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:13:08.666232Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:13:11.706779Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:13:27.546402Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "c790ca96e330499c8b3b27f6b509ff72.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 945000.0,
+      "category": "Equipo de Frío",
+      "date": "2025-10-21"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:13:48.016842Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "6ed257ecaf61427f9f0fbc57b857492c.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 30000.0,
+      "category": "Combustible",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:13:50.069109Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:15:04.218970Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:15:14.957412Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:15:34.070194Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "79425cc03c6e4df39415dbfec8b99f49.jpeg",
+      "original_name": "WhatsApp Image 2023-10-24 at 11.00.20 (1).jpeg",
+      "amount": 1.0,
+      "category": "Peajes",
+      "date": "2025-11-03"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:15:54.442561Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "82e3d0bcc17440a39c1e9a01ad8680f9.jpeg",
+      "original_name": "WhatsApp Image 2025-10-13 at 10.24.27 (1).jpeg",
+      "amount": 34660.0,
+      "category": "Gomeria",
+      "date": "2025-10-15"
+    }
+  },
+  {
+    "timestamp": "2025-11-03T01:15:56.647339Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-03T01:16:50.694635Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T11:21:36.565012Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T11:22:00.707487Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T11:26:36.864714Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:01:39.213182Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:02:05.678313Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "4897b80bce9442bc938daf35e653fffb.jpeg",
+      "original_name": "WhatsApp Image 2025-06-04 at 10.40.48.jpeg",
+      "amount": 20000.0,
+      "category": "Otros",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:02:10.159097Z",
+    "action": "delete",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "id": "4897b80bce9442bc938daf35e653fffb",
+      "filename": "4897b80bce9442bc938daf35e653fffb.jpeg"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:02:21.887252Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "2233c2f8ac1b42e8a495d41a970f144d.jpeg",
+      "original_name": "WhatsApp Image 2023-05-31 at 17.02.36.jpeg",
+      "amount": 20000.0,
+      "category": "Otros",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:02:55.959395Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "0b211b2b42eb464f9da28d7d9e4fbc2f.jpeg",
+      "original_name": "WhatsApp Image 2023-06-01 at 17.23.37.jpeg",
+      "amount": 10000.0,
+      "category": "Combustible",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:03:59.229677Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "1e2b4144f6b143ecaeb1dfe04d532039.jpeg",
+      "original_name": "WhatsApp Image 2025-10-13 at 10.24.27.jpeg",
+      "amount": 3500.0,
+      "category": "Peajes",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:04:22.074076Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "ff181afa48a7486a928c07060f00c35a.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.01.jpeg",
+      "amount": 6000.0,
+      "category": "Peajes",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:04:45.989003Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {
+      "filename": "e68f239326b54df1921fb9223d40e172.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 14.45.45.jpeg",
+      "amount": 60000.0,
+      "category": "Mecanica",
+      "date": "2025-10-28"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:04:50.493055Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "MEDINA NICOLAS JOSE BERNARDO",
+    "actor_dni": "34763820",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:10:29.637693Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:11:20.332906Z",
+    "action": "delete_all",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {
+      "dni": "25498853",
+      "count": 1
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:12:00.506404Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:12:18.035386Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "GOMEZ JUAN RAFAEL",
+    "actor_dni": "25498853",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:12:40.307678Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "GOMEZ JUAN RAFAEL",
+    "actor_dni": "25498853",
+    "details": {
+      "filename": "cdd399098d174b7e89f8c29d89bed1d5.jpeg",
+      "original_name": "WhatsApp Image 2025-06-03 at 16.32.05.jpeg",
+      "amount": 1.0,
+      "category": "Peajes",
+      "date": "2025-11-03"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T13:12:43.947851Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "GOMEZ JUAN RAFAEL",
+    "actor_dni": "25498853",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T13:13:32.187447Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:01:50.381815Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:05:44.774303Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:08:21.327694Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:09:10.889823Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:13:08.753738Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:44:07.013045Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T14:44:41.024081Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T17:56:31.221836Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T17:58:21.200014Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {
+      "filename": "2e7ac691652246cdbb61b34572fe76dc.jpeg",
+      "original_name": "WhatsApp Image 2025-08-07 at 18.07.09.jpeg",
+      "amount": 2000.0,
+      "category": "Combustible",
+      "date": "2025-11-03"
+    }
+  },
+  {
+    "timestamp": "2025-11-04T17:58:30.419302Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:00:13.420545Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:00:17.524480Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:02:18.465088Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:04:06.924053Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:04:20.160129Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:09:29.482081Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:10:38.177451Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:10:56.786251Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:11:13.635803Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:15:08.374342Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:15:20.008295Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-04T18:18:42.551455Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:03:06.231179Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:03:18.713818Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:05:02.640395Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CANSINO ARIEL EDGARDO",
+    "actor_dni": "26684405",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:05:52.456394Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:06:04.914173Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:06:13.725370Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:06:58.743234Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:07:24.601446Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-05T02:08:14.402397Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T01:38:10.506384Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T01:38:16.606773Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T01:42:18.940112Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T11:43:34.880367Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T11:44:04.919290Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {
+      "filename": "2539a20d69a142aab163455f0c67821b.jpeg",
+      "original_name": "WhatsApp Image 2025-09-11 at 16.54.21.jpeg",
+      "amount": 35000.0,
+      "category": "Combustible",
+      "date": "2025-11-01"
+    }
+  },
+  {
+    "timestamp": "2025-11-06T11:44:09.551853Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "RUIZ JUAN MARTIN",
+    "actor_dni": "38216403",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T11:44:37.718143Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T11:45:00.204095Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "9b8d4604ba3f41388818b13ef4b158a2.jpeg",
+      "original_name": "WhatsApp Image 2025-10-07 at 12.34.20.jpeg",
+      "amount": 35000.0,
+      "category": "Peajes",
+      "date": "2025-10-24"
+    }
+  },
+  {
+    "timestamp": "2025-11-06T11:45:02.316017Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T12:08:07.004861Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T12:08:54.859431Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T12:51:42.057375Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T12:51:43.865249Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T13:06:23.319014Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T13:07:39.754416Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "689e1f3ac578407da9744b8b4c0287a2.jpeg",
+      "original_name": "WhatsApp Image 2023-12-01 at 11.02.54 (1).jpeg",
+      "amount": 20000.0,
+      "category": "Gomeria",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-06T13:08:36.480777Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "4d3205c88183474e97b97e465556619d.jpeg",
+      "original_name": "WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 20000.0,
+      "category": "Combustible",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-06T13:08:57.093824Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T13:18:41.353077Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-06T13:25:10.402105Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T01:12:26.450493Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T13:54:40.642584Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T13:55:08.742605Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "803ad170b04c4a0b8e7d0c8dd6136f7e.jpeg",
+      "original_name": "8620726 - WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 15000.0,
+      "category": "Gomeria",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-08T13:55:15.182498Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T13:56:26.898880Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T13:57:19.222181Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T13:57:22.801086Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-08T13:57:55.275471Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "4585acf89812489992835a0e9248c339.jpeg",
+      "original_name": "86207210 - 8620726 - WhatsApp Image 2025-08-08 at 10.25.02 (1).jpeg",
+      "amount": 1500.0,
+      "category": "Peajes",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-08T13:58:08.689371Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T19:12:56.173052Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T19:13:15.965367Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T19:18:58.442918Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T19:19:08.725080Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T23:36:02.340757Z",
+    "action": "login_empleado",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T23:36:26.282889Z",
+    "action": "upload",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {
+      "filename": "52152423686e4d75929a08691a923f15.jpeg",
+      "original_name": "WhatsApp Image 2025-11-03 at 11.09.32 (1).jpeg",
+      "amount": 20000.0,
+      "category": "Peajes",
+      "date": "2025-11-04"
+    }
+  },
+  {
+    "timestamp": "2025-11-12T23:36:38.400893Z",
+    "action": "logout",
+    "actor_role": "empleado",
+    "actor_name": "CARRIZO DIEGO FERNANDO",
+    "actor_dni": "25862072",
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T23:37:16.419858Z",
+    "action": "logout",
+    "actor_role": "admin",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  },
+  {
+    "timestamp": "2025-11-12T23:38:38.350969Z",
+    "action": "logout",
+    "actor_role": "master",
+    "actor_name": null,
+    "actor_dni": null,
+    "details": {}
+  }
+]
