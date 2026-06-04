@@ -555,7 +555,8 @@ def admin_employee(dni):
     emp = {'dni': dni, **emp}
     uploads = storage.get_uploads(dni)
     total = total_for_dni(dni)
-    return render_template('admin_employee.html', employee=emp, uploads=uploads, total=total)
+    admin_msg = session.pop('admin_msg', None)
+    return render_template('admin_employee.html', employee=emp, uploads=uploads, total=total, admin_msg=admin_msg)
 
 @app.route('/admin/descargar/<dni>/<filename>')
 def admin_download_file(dni, filename):
@@ -633,7 +634,9 @@ def admin_delete_all(dni):
     to_delete = storage.delete_uploads_for_dni(dni)
     for u in to_delete:
         PHOTO_STORAGE.delete(dni, u.get('filename', ''))
+    PHOTO_STORAGE.delete_all_for_dni(dni)
     log_activity('delete_all', 'admin', None, None, {'dni': dni, 'count': len(to_delete)})
+    session['admin_msg'] = f'Se eliminaron {len(to_delete)} archivo(s) de forma permanente.'
     return redirect(url_for('admin_employee', dni=dni))
 
 # Master user: login and audit view
@@ -915,7 +918,7 @@ def _delete_upload(upload_id=None, filename=None, requester_dni=None, admin=Fals
     if upload_id:
         storage.delete_upload_by_id(upload_id)
     elif filename:
-        storage.delete_upload_by_filename(filename)
+        storage.delete_upload_by_filename(filename, dni=target.get('dni'))
     return True
 
 
@@ -978,6 +981,9 @@ def admin_delete_post():
     ok = _delete_upload(upload_id=upload_id, filename=filename, admin=True)
     if ok:
         log_activity('delete', 'admin', None, None, {'id': upload_id, 'filename': filename, 'dni': dni})
+        session['admin_msg'] = 'Archivo eliminado de forma permanente.'
+    elif dni:
+        session['admin_msg'] = 'No se pudo eliminar el archivo.'
     if dni:
         return redirect(url_for('admin_employee', dni=dni))
     return redirect(url_for('admin_dashboard'))

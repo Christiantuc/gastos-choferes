@@ -34,6 +34,9 @@
         <a class="btn btn-secondary" href="{{ url_for('admin_dashboard') }}">Volver</a>
       </div>
     </div>
+    {% if admin_msg %}
+    <div class="alert alert-success" role="alert">{{ admin_msg }}</div>
+    {% endif %}
     {% if uploads %}
     <div class="row g-3">
       {% for u in uploads %}
