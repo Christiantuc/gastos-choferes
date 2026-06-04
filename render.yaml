@@ -4,13 +4,28 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --timeout 120 --workers 1
+    healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.10"
+      - key: RENDER
+        value: "true"
       - key: ADMIN_PASSWORD
         sync: false
       - key: MASTER_PASSWORD
         sync: false
       - key: SECRET_KEY
-        generateValue: true
+        sync: false
+      - key: STORAGE_BACKEND
+        sync: false
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_ENDPOINT_URL
+        sync: false
+      - key: S3_REGION
+        value: auto

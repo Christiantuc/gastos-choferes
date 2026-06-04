@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session, send_from_directory, Response, current_app
+from flask import Flask, render_template, request, redirect, url_for, session, Response, abort
+from werkzeug.middleware.proxy_fix import ProxyFix
 from datetime import datetime, timezone
 import json
 import os
@@ -6,11 +7,25 @@ import sys
 import uuid
 import shutil
 
+import storage
+import photo_storage
+
 try:
     from dotenv import load_dotenv
     load_dotenv()
 except ImportError:
     pass
+
+try:
+    from PIL import Image
+    try:
+        import pillow_heif
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
 
 # Ensure templates are found regardless of current working directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -30,60 +45,101 @@ print("======================\n")
 os.makedirs(TEMPLATES_DIR, exist_ok=True)
 
 app = Flask(__name__, template_folder=TEMPLATES_DIR)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
 
 app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key')
 ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'admin123')
 MASTER_PASSWORD = os.environ.get('MASTER_PASSWORD', 'master123')
 
-UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp'}
+DATA_DIR = storage.init_storage(BASE_DIR)
+UPLOAD_FOLDER = os.path.join(DATA_DIR, 'uploads')
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+_legacy_uploads = os.path.join(BASE_DIR, 'uploads')
+if os.path.isdir(_legacy_uploads):
+    try:
+        for dni_dir in os.listdir(_legacy_uploads):
+            src = os.path.join(_legacy_uploads, dni_dir)
+            dst = os.path.join(UPLOAD_FOLDER, dni_dir)
+            if os.path.isdir(src):
+                shutil.copytree(src, dst, dirs_exist_ok=True)
+    except Exception:
+        pass
+
+PHOTO_STORAGE = photo_storage.create_photo_storage(UPLOAD_FOLDER)
+_migrated = photo_storage.migrate_local_to_cloud(UPLOAD_FOLDER, PHOTO_STORAGE)
+if _migrated:
+    print(f"Fotos migradas a {PHOTO_STORAGE.backend_name}: {_migrated}")
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp', 'heic', 'heif'}
 EMPLOYEES_FILE = 'employees.json'
 UPLOADS_META_FILE = 'uploads_meta.json'
 AUDIT_LOG_FILE = 'audit_log.json'
 
-# Empleados autorizados (DNI -> Nombre)
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE='Lax',
+    SESSION_COOKIE_SECURE=os.environ.get('RENDER') == 'true' or os.environ.get('FLASK_ENV') == 'production',
+)
+
 ALLOWED_EMPLOYEES = {
     '26684405': 'CANSINO ARIEL EDGARDO',
     '25862072': 'CARRIZO DIEGO FERNANDO',
     '25498853': 'GOMEZ JUAN RAFAEL',
     '25058170': 'LEYES OSVALDO OSCAR',
     '38216403': 'RUIZ JUAN MARTIN',
+    '34763820': 'MEDINA NICOLAS JOSE BERNARDO',
 }
-
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Max file size 10 MB
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
 
-for path, default in [
-    (EMPLOYEES_FILE, {}),
-    (UPLOADS_META_FILE, []),
-    (AUDIT_LOG_FILE, []),
-]:
-    if not os.path.exists(path):
-        with open(path, 'w') as f:
-            json.dump(default, f)
-
-def read_json(path, default):
-    try:
-        with open(path, 'r') as f:
-            return json.load(f)
-    except Exception:
-        return default
-
-def write_json(path, data):
-    with open(path, 'w') as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
 
 def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    if not filename or '.' not in filename:
+        return False
+    return filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def process_upload_image(file, ext: str) -> tuple[bytes, str, str]:
+    """Procesa la imagen y devuelve (bytes, extensión_final, content_type)."""
+    if HAS_PIL and ext in ('heic', 'heif', 'jpg', 'jpeg', 'png', 'webp'):
+        try:
+            img = Image.open(file.stream)
+            out_ext = 'jpg' if ext in ('heic', 'heif') else ext
+            if out_ext == 'jpeg':
+                out_ext = 'jpg'
+            if img.mode in ('RGBA', 'P'):
+                img = img.convert('RGB')
+            from io import BytesIO
+            buf = BytesIO()
+            fmt = 'JPEG' if out_ext == 'jpg' else out_ext.upper()
+            if fmt == 'JPEG':
+                img.save(buf, format='JPEG', quality=90)
+                ctype = 'image/jpeg'
+            else:
+                img.save(buf, format=fmt)
+                ctype = photo_storage._guess_content_type(f"x.{out_ext}")
+            return buf.getvalue(), out_ext, ctype
+        except Exception:
+            file.stream.seek(0)
+    data = file.read()
+    return data, ext, photo_storage._guess_content_type(f"x.{ext}")
+
+
+def _photo_response(dni: str, filename: str, as_attachment=False, download_name=None):
+    data, content_type = PHOTO_STORAGE.read_bytes(dni, filename)
+    if data is None:
+        abort(404)
+    headers = {}
+    if as_attachment:
+        headers['Content-Disposition'] = f'attachment; filename="{download_name or filename}"'
+    return Response(data, mimetype=content_type, headers=headers)
 
 def current_employee():
     dni = session.get('dni')
     if not dni:
         return None
-    employees = read_json(EMPLOYEES_FILE, {})
-    emp = employees.get(dni)
+    emp = storage.get_employee(dni)
     if not emp:
         return None
     emp['dni'] = dni
@@ -96,7 +152,7 @@ def current_master():
     return True if session.get('is_master') else False
 
 def total_for_dni(dni):
-    uploads = [u for u in read_json(UPLOADS_META_FILE, []) if u.get('dni') == dni]
+    uploads = storage.get_uploads(dni)
     total = 0.0
     for u in uploads:
         try:
@@ -107,17 +163,15 @@ def total_for_dni(dni):
     return total
 
 def log_activity(action, actor_role, actor_name=None, actor_dni=None, details=None):
-    log = read_json(AUDIT_LOG_FILE, [])
     entry = {
         'timestamp': datetime.utcnow().isoformat() + 'Z',
         'action': action,
-        'actor_role': actor_role,  # 'empleado' | 'admin' | 'master'
+        'actor_role': actor_role,
         'actor_name': actor_name,
         'actor_dni': actor_dni,
         'details': details or {}
     }
-    log.append(entry)
-    write_json(AUDIT_LOG_FILE, log)
+    storage.append_audit(entry)
 
 def _parse_iso8601_z(ts: str):
     # Accept timestamps ending with 'Z' by replacing with +00:00
@@ -127,6 +181,33 @@ def _parse_iso8601_z(ts: str):
         return datetime.fromisoformat(ts)
     except Exception:
         return None
+
+@app.route('/health')
+def health():
+    return {
+        'status': 'ok',
+        'time': datetime.utcnow().isoformat() + 'Z',
+        'photo_storage': PHOTO_STORAGE.backend_name,
+    }, 200
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('error.html', code=404, message='Página no encontrada.'), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template('error.html', code=500, message='Error interno del servidor. Intentá de nuevo.'), 500
+
+
+@app.errorhandler(413)
+def too_large(e):
+    session['error'] = 'La imagen es demasiado grande (máximo 10 MB).'
+    if session.get('dni'):
+        return redirect(url_for('employee_home'))
+    return render_template('error.html', code=413, message='Archivo demasiado grande (máximo 10 MB).'), 413
+
 
 @app.route('/')
 def root():
@@ -152,20 +233,16 @@ def login():
         if not dni:
             return render_template('login.html', error='El DNI es obligatorio')
         # Validar DNI autorizado y obtener nombre
-        employees = read_json(EMPLOYEES_FILE, {})
+        employees = storage.get_employees()
         emp = employees.get(dni) if isinstance(employees, dict) else None
         if emp:
             name = emp.get('name') or ''
-            # actualizar/guardar teléfono si se envía
-            employees[dni] = {**emp, 'name': name, 'phone': phone}
-            write_json(EMPLOYEES_FILE, employees)
+            storage.save_employee(dni, {**emp, 'name': name, 'phone': phone})
         else:
-            # compatibilidad: permitir DNIs en la lista fija ALLOWED_EMPLOYEES
             name = ALLOWED_EMPLOYEES.get(dni)
             if not name:
                 return render_template('login.html', error='DNI no autorizado')
-            employees[dni] = {'name': name, 'phone': phone}
-            write_json(EMPLOYEES_FILE, employees)
+            storage.save_employee(dni, {'name': name, 'phone': phone})
         session['dni'] = dni
         session.pop('is_admin', None)
         session.pop('is_master', None)
@@ -186,7 +263,7 @@ def logout():
     name = None
     dni = session.get('dni')
     if dni:
-        emp = read_json(EMPLOYEES_FILE, {}).get(dni)
+        emp = storage.get_employee(dni)
         name = emp.get('name') if emp else None
     session.clear()
     log_activity('logout', who, name, dni, {})
@@ -197,11 +274,11 @@ def employee_home():
     emp = current_employee()
     if not emp:
         return redirect(url_for('login'))
-    uploads = [u for u in read_json(UPLOADS_META_FILE, []) if u.get('dni') == emp['dni']]
-    uploads.sort(key=lambda x: x.get('uploaded_at'), reverse=True)
+    uploads = storage.get_uploads(emp['dni'])
     total = total_for_dni(emp['dni'])
     err = session.pop('error', None)
-    return render_template('employee.html', employee=emp, uploads=uploads, total=total, error=err)
+    ok = session.pop('success', None)
+    return render_template('employee.html', employee=emp, uploads=uploads, total=total, error=err, success=ok)
 
 @app.route('/empleado/subir', methods=['POST'])
 def employee_upload():
@@ -240,68 +317,62 @@ def employee_upload():
     if category in ('Peajes', 'Combustible') and not ticket_number:
         session['error'] = 'Debe ingresar el N° Ticket para esta categoría.'
         return redirect(url_for('employee_home'))
-    # Generar 'N° grabacion' persistente por empleado: últimos 6 dígitos del DNI + secuencia incremental
-    employees_data = read_json(EMPLOYEES_FILE, {})
-    emp_row = employees_data.get(emp['dni']) if isinstance(employees_data, dict) else None
-    if not isinstance(emp_row, dict):
-        emp_row = {}
-    try:
-        last_seq = int(emp_row.get('record_seq', -1))
-    except Exception:
-        last_seq = -1
-    next_seq = last_seq + 1
-    emp_row['record_seq'] = next_seq
-    employees_data[emp['dni']] = emp_row
-    write_json(EMPLOYEES_FILE, employees_data)
-    grabacion_num = f"{emp['dni'][-6:]}{next_seq}"
     if 'file' not in request.files:
+        session['error'] = 'Debe seleccionar una imagen del gasto.'
         return redirect(url_for('employee_home'))
     file = request.files['file']
-    if file.filename == '':
+    if not file or file.filename == '':
+        session['error'] = 'Debe seleccionar una imagen del gasto.'
         return redirect(url_for('employee_home'))
-    if file and allowed_file(file.filename):
-        ext = file.filename.rsplit('.', 1)[1].lower()
-        uid = uuid.uuid4().hex
-        fname = f"{uid}.{ext}"
-        emp_dir = os.path.join(UPLOAD_FOLDER, emp['dni'])
-        os.makedirs(emp_dir, exist_ok=True)
-        dest_path = os.path.join(emp_dir, fname)
-        file.save(dest_path)
-        uploads = read_json(UPLOADS_META_FILE, [])
-        uploads.append({
-            'id': uid,
-            'dni': emp['dni'],
+    if not allowed_file(file.filename):
+        session['error'] = 'Formato de imagen no permitido. Usá JPG, PNG o WEBP.'
+        return redirect(url_for('employee_home'))
+    next_seq = storage.next_record_seq(emp['dni'])
+    grabacion_num = f"{emp['dni'][-6:]}{next_seq}"
+    ext = file.filename.rsplit('.', 1)[1].lower()
+    uid = uuid.uuid4().hex
+    try:
+        image_data, final_ext, content_type = process_upload_image(file, ext)
+        fname = f"{uid}.{final_ext}"
+        PHOTO_STORAGE.save_bytes(emp['dni'], fname, image_data, content_type)
+    except Exception:
+        session['error'] = 'No se pudo guardar la imagen. Intentá con otra foto (JPG o PNG).'
+        return redirect(url_for('employee_home'))
+    storage.add_upload({
+        'id': uid,
+        'dni': emp['dni'],
+        'filename': fname,
+        'original_name': file.filename,
+        'uploaded_at': datetime.utcnow().isoformat() + 'Z',
+        'amount': amount,
+        'category': category,
+        'date': date_val,
+        'toll_corridor': toll_corridor if category == 'Peajes' else None,
+        'fuel_company': fuel_company if category == 'Combustible' else None,
+        'ticket_number': ticket_number if category in ('Peajes', 'Combustible') else None,
+        'N° grabacion': grabacion_num,
+    })
+    log_activity(
+        action='upload',
+        actor_role='empleado',
+        actor_name=emp.get('name'),
+        actor_dni=emp.get('dni'),
+        details={
             'filename': fname,
             'original_name': file.filename,
-            'uploaded_at': datetime.utcnow().isoformat() + 'Z',
             'amount': amount,
             'category': category,
             'date': date_val,
-            'toll_corridor': toll_corridor if category == 'Peajes' else None,
-            'fuel_company': fuel_company if category == 'Combustible' else None,
-            'ticket_number': ticket_number if category in ('Peajes','Combustible') else None,
             'N° grabacion': grabacion_num,
-        })
-        write_json(UPLOADS_META_FILE, uploads)
-        # audit log
-        log_activity(
-            action='upload',
-            actor_role='empleado',
-            actor_name=emp.get('name'),
-            actor_dni=emp.get('dni'),
-            details={
-                'filename': fname,
-                'original_name': file.filename,
-                'amount': amount,
-                'category': category,
-                'date': date_val
-            }
-        )
+        }
+    )
+    session['success'] = f'Gasto registrado correctamente (N° {grabacion_num}).'
     return redirect(url_for('employee_home'))
 
 @app.route('/files/<dni>/<filename>')
 def serve_file(dni, filename):
-    return send_from_directory(os.path.join(UPLOAD_FOLDER, dni), filename)
+    return _photo_response(dni, filename)
+
 
 @app.route('/admin/login', methods=['GET', 'POST'])
 def admin_login():
@@ -320,12 +391,25 @@ def require_admin():
 def require_master():
     return session.get('is_master') is True
 
+@app.route('/admin/')
+def admin_root():
+    if require_admin():
+        return redirect(url_for('admin_dashboard'))
+    return redirect(url_for('admin_login'))
+
+
+@app.route('/master/')
+def master_root():
+    if require_master():
+        return redirect(url_for('master_audit'))
+    return redirect(url_for('master_login'))
+
 @app.route('/admin')
 def admin_dashboard():
     if not require_admin():
         return redirect(url_for('admin_login'))
-    employees = read_json(EMPLOYEES_FILE, {})
-    uploads = read_json(UPLOADS_META_FILE, [])
+    employees = storage.get_employees()
+    uploads = storage.get_uploads()
     counts = {}
     totals = {}
     for u in uploads:
@@ -353,8 +437,8 @@ def admin_dashboard():
 def admin_export():
     if not require_admin():
         return redirect(url_for('admin_login'))
-    employees = read_json(EMPLOYEES_FILE, {})
-    uploads = read_json(UPLOADS_META_FILE, [])
+    employees = storage.get_employees()
+    uploads = storage.get_uploads()
     counts = {}
     totals = {}
     for u in uploads:
@@ -410,8 +494,8 @@ def admin_export():
 def admin_export_grabaciones():
     if not require_admin():
         return redirect(url_for('admin_login'))
-    employees = read_json(EMPLOYEES_FILE, {})
-    uploads = read_json(UPLOADS_META_FILE, [])
+    employees = storage.get_employees()
+    uploads = storage.get_uploads()
     # Preparar CSV Excel-friendly
     import csv
     from io import StringIO
@@ -459,13 +543,12 @@ def admin_export_grabaciones():
 def admin_employee(dni):
     if not require_admin():
         return redirect(url_for('admin_login'))
-    employees = read_json(EMPLOYEES_FILE, {})
+    employees = storage.get_employees()
     emp = employees.get(dni)
     if not emp:
         return redirect(url_for('admin_dashboard'))
     emp = {'dni': dni, **emp}
-    uploads = [u for u in read_json(UPLOADS_META_FILE, []) if u.get('dni') == dni]
-    uploads.sort(key=lambda x: x.get('uploaded_at'), reverse=True)
+    uploads = storage.get_uploads(dni)
     total = total_for_dni(dni)
     return render_template('admin_employee.html', employee=emp, uploads=uploads, total=total)
 
@@ -474,11 +557,11 @@ def admin_download_file(dni, filename):
     if not require_admin():
         return redirect(url_for('admin_login'))
     # Try to use original name if exists and prefix with N° grabacion if present
-    meta = next((u for u in read_json(UPLOADS_META_FILE, []) if u.get('dni') == dni and u.get('filename') == filename), None)
+    meta = storage.find_upload(dni, filename)
     base_name = meta.get('original_name') if meta and meta.get('original_name') else filename
     n_grab = meta.get('N° grabacion') if meta else None
     download_name = f"{n_grab} - {base_name}" if n_grab else base_name
-    return send_from_directory(os.path.join(UPLOAD_FOLDER, dni), filename, as_attachment=True, download_name=download_name)
+    return _photo_response(dni, filename, as_attachment=True, download_name=download_name)
 
 @app.route('/admin/descargar_todo/<dni>')
 def admin_download_all(dni):
@@ -488,15 +571,17 @@ def admin_download_all(dni):
     import zipfile
     mem = BytesIO()
     with zipfile.ZipFile(mem, mode='w', compression=zipfile.ZIP_DEFLATED) as zf:
-        uploads = [u for u in read_json(UPLOADS_META_FILE, []) if u.get('dni') == dni]
+        uploads = storage.get_uploads(dni)
         for u in uploads:
-            path = os.path.join(UPLOAD_FOLDER, dni, u.get('filename',''))
-            if os.path.exists(path):
-                base = u.get('original_name') or u.get('filename')
+            fname = u.get('filename', '')
+            if not fname:
+                continue
+            data, _ = PHOTO_STORAGE.read_bytes(dni, fname)
+            if data:
+                base = u.get('original_name') or fname
                 n_grab = u.get('N° grabacion')
                 arcname = f"{n_grab} - {base}" if n_grab else base
-                # ensure unique names in zip
-                zf.write(path, arcname=arcname)
+                zf.writestr(arcname, data)
     mem.seek(0)
     ts = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
     return Response(mem.getvalue(), mimetype='application/zip', headers={'Content-Disposition': f'attachment; filename="{dni}_gastos_{ts}.zip"'})
@@ -507,7 +592,7 @@ def admin_download_data(dni):
     if not require_admin():
         return redirect(url_for('admin_login'))
     # Build simple HTML table Excel-compatible
-    uploads = [u for u in read_json(UPLOADS_META_FILE, []) if u.get('dni') == dni]
+    uploads = storage.get_uploads(dni)
     uploads.sort(key=lambda x: x.get('uploaded_at') or '')
     def esc(val):
         try:
@@ -540,19 +625,9 @@ def admin_download_data(dni):
 def admin_delete_all(dni):
     if not require_admin():
         return redirect(url_for('admin_login'))
-    uploads = read_json(UPLOADS_META_FILE, [])
-    to_delete = [u for u in uploads if u.get('dni') == dni]
-    # remove files
+    to_delete = storage.delete_uploads_for_dni(dni)
     for u in to_delete:
-        file_path = os.path.join(UPLOAD_FOLDER, dni, u.get('filename', ''))
-        try:
-            if os.path.exists(file_path):
-                os.remove(file_path)
-        except Exception:
-            pass
-    # update meta
-    uploads = [u for u in uploads if u.get('dni') != dni]
-    write_json(UPLOADS_META_FILE, uploads)
+        PHOTO_STORAGE.delete(dni, u.get('filename', ''))
     log_activity('delete_all', 'admin', None, None, {'dni': dni, 'count': len(to_delete)})
     return redirect(url_for('admin_employee', dni=dni))
 
@@ -573,7 +648,7 @@ def master_login():
 def master_employees():
     if not require_master():
         return redirect(url_for('master_login'))
-    employees_data = read_json(EMPLOYEES_FILE, {})
+    employees_data = storage.get_employees()
     employees_list = [
         {'dni': dni, 'name': (data.get('name') if isinstance(data, dict) else None) or '', 'cuil': (data.get('cuil') if isinstance(data, dict) else None) or ''}
         for dni, data in employees_data.items()
@@ -604,11 +679,9 @@ def master_add_employee():
     if not name or not dni or not cuil:
         # Podríamos pasar un mensaje de error vía querystring o flash; por simplicidad redirigimos
         return redirect(url_for('master_employees'))
-    employees = read_json(EMPLOYEES_FILE, {})
-    existing = employees.get(dni) if isinstance(employees, dict) else None
-    phone = existing.get('phone') if isinstance(existing, dict) else None
-    employees[dni] = {'name': name, 'phone': phone, 'cuil': cuil}
-    write_json(EMPLOYEES_FILE, employees)
+    existing = storage.get_employee(dni)
+    phone = existing.get('phone') if existing else None
+    storage.save_employee(dni, {'name': name, 'phone': phone, 'cuil': cuil})
     log_activity('add_employee', 'master', None, None, {'dni': dni, 'name': name, 'cuil': cuil})
     return redirect(url_for('master_employees'))
 
@@ -627,62 +700,20 @@ def master_update_employee():
         return redirect(url_for('master_employees'))
     if not name or not new_dni or not new_cuil:
         return redirect(url_for('master_employees'))
-    employees = read_json(EMPLOYEES_FILE, {})
+    employees = storage.get_employees()
     existing = employees.get(original_dni) if isinstance(employees, dict) else None
     if not existing:
         return redirect(url_for('master_employees'))
-    # Si cambia el DNI y ya existe otro con ese DNI, no continuar
     if new_dni != original_dni and new_dni in employees:
         return redirect(url_for('master_employees'))
-    # Preparar datos nuevos conservando telefono si existiera
     phone = existing.get('phone') if isinstance(existing, dict) else None
-    # Preservar campos adicionales (por ejemplo, record_seq)
     new_record = {**existing} if isinstance(existing, dict) else {}
     new_record.update({'name': name, 'phone': phone, 'cuil': new_cuil})
-    # Migrar si cambia el DNI
     if new_dni != original_dni:
-        employees[new_dni] = new_record
-        if original_dni in employees:
-            del employees[original_dni]
-        write_json(EMPLOYEES_FILE, employees)
-        # Actualizar uploads_meta.json
-        uploads = read_json(UPLOADS_META_FILE, [])
-        changed = False
-        for u in uploads:
-            if u.get('dni') == original_dni:
-                u['dni'] = new_dni
-                changed = True
-        if changed:
-            write_json(UPLOADS_META_FILE, uploads)
-        # Mover carpeta de uploads
-        try:
-            old_dir = os.path.join(UPLOAD_FOLDER, original_dni)
-            new_dir = os.path.join(UPLOAD_FOLDER, new_dni)
-            if os.path.exists(old_dir):
-                os.makedirs(os.path.dirname(new_dir) or UPLOAD_FOLDER, exist_ok=True)
-                # Si ya existe new_dir, mover archivos individualmente
-                if os.path.exists(new_dir):
-                    for fname in os.listdir(old_dir):
-                        try:
-                            old_path = os.path.join(old_dir, fname)
-                            new_path = os.path.join(new_dir, fname)
-                            if os.path.exists(old_path):
-                                # Asegurar nombre único si colisiona
-                                if os.path.exists(new_path):
-                                    base, ext = os.path.splitext(fname)
-                                    import uuid as _uuid
-                                    new_path = os.path.join(new_dir, f"{base}_{_uuid.uuid4().hex[:6]}{ext}")
-                                shutil.move(old_path, new_path)
-                        except Exception:
-                            pass
-                    try:
-                        shutil.rmtree(old_dir, ignore_errors=True)
-                    except Exception:
-                        pass
-                else:
-                    shutil.move(old_dir, new_dir)
-        except Exception:
-            pass
+        storage.save_employee(new_dni, new_record)
+        storage.delete_employee(original_dni)
+        storage.update_upload_dni(original_dni, new_dni)
+        PHOTO_STORAGE.rename_dni(original_dni, new_dni)
         log_activity('update_employee', 'master', None, None, {
             'original_dni': original_dni,
             'new_dni': new_dni,
@@ -690,11 +721,9 @@ def master_update_employee():
             'cuil': new_cuil,
         })
     else:
-        # Solo actualizar campos, preservando adicionales
         updated = {**existing} if isinstance(existing, dict) else {}
         updated.update({'name': name, 'phone': phone, 'cuil': new_cuil})
-        employees[original_dni] = updated
-        write_json(EMPLOYEES_FILE, employees)
+        storage.save_employee(original_dni, updated)
         log_activity('update_employee', 'master', None, None, {
             'dni': original_dni,
             'name': name,
@@ -743,7 +772,7 @@ def _filter_logs_by_date(entries, start_date_str=None, end_date_str=None):
 def master_audit():
     if not require_master():
         return redirect(url_for('master_login'))
-    log = read_json(AUDIT_LOG_FILE, [])
+    log = storage.get_audit_log()
     start_date = request.args.get('start')
     end_date = request.args.get('end')
     actor_dni = request.args.get('dni', '').strip()
@@ -754,7 +783,7 @@ def master_audit():
     if action:
         log = [e for e in log if (e.get('action') or '') == action]
     log_sorted = sorted(log, key=lambda x: x.get('timestamp', ''), reverse=True)
-    employees_data = read_json(EMPLOYEES_FILE, {})
+    employees_data = storage.get_employees()
     for entry in log_sorted:
         if not entry.get('actor_name') and entry.get('actor_dni'):
             emp = employees_data.get(entry['actor_dni'])
@@ -785,7 +814,7 @@ def master_export():
     end_date = request.args.get('end')
     actor_dni = request.args.get('dni', '').strip()
     action = request.args.get('action', '').strip()
-    log = read_json(AUDIT_LOG_FILE, [])
+    log = storage.get_audit_log()
     log = _filter_logs_by_date(log, start_date, end_date)
     if actor_dni:
         log = [e for e in log if (e.get('actor_dni') or '') == actor_dni]
@@ -834,7 +863,7 @@ def master_export():
 def master_employees_export():
     if not require_master():
         return redirect(url_for('master_login'))
-    employees = read_json(EMPLOYEES_FILE, {})
+    employees = storage.get_employees()
     import csv
     from io import StringIO
     from flask import Response
@@ -866,59 +895,32 @@ def master_employees_export():
     )
 
 def _delete_upload(upload_id=None, filename=None, requester_dni=None, admin=False):
-    uploads = read_json(UPLOADS_META_FILE, [])
     target = None
     if upload_id:
-        target = next((u for u in uploads if u.get('id') == upload_id), None)
-    if not target and filename:
-        target = next((u for u in uploads if u.get('filename') == filename), None)
+        all_uploads = storage.get_uploads()
+        target = next((u for u in all_uploads if u.get('id') == upload_id), None)
+    elif filename:
+        all_uploads = storage.get_uploads()
+        target = next((u for u in all_uploads if u.get('filename') == filename), None)
     if not target:
         return False
     if not admin and requester_dni and target.get('dni') != requester_dni:
         return False
-    # remove file
-    file_path = os.path.join(UPLOAD_FOLDER, target.get('dni', ''), target.get('filename', ''))
-    try:
-        if os.path.exists(file_path):
-            os.remove(file_path)
-    except Exception:
-        pass
-    # update meta
+    PHOTO_STORAGE.delete(target.get('dni', ''), target.get('filename', ''))
     if upload_id:
-        uploads = [u for u in uploads if u.get('id') != upload_id]
+        storage.delete_upload_by_id(upload_id)
     elif filename:
-        uploads = [u for u in uploads if u.get('filename') != filename]
-    write_json(UPLOADS_META_FILE, uploads)
+        storage.delete_upload_by_filename(filename)
     return True
 
 
 def _delete_all_for_dni(dni: str):
-    employees = read_json(EMPLOYEES_FILE, {})
-    emp = employees.get(dni)
-    # remove uploads meta and files
-    uploads = read_json(UPLOADS_META_FILE, [])
-    to_delete = [u for u in uploads if u.get('dni') == dni]
+    emp = storage.get_employee(dni)
+    to_delete = storage.delete_uploads_for_dni(dni)
     for u in to_delete:
-        file_path = os.path.join(UPLOAD_FOLDER, dni, u.get('filename', ''))
-        try:
-            if os.path.exists(file_path):
-                os.remove(file_path)
-        except Exception:
-            pass
-    # remove directory if exists
-    try:
-        dir_path = os.path.join(UPLOAD_FOLDER, dni)
-        if os.path.exists(dir_path):
-            shutil.rmtree(dir_path, ignore_errors=True)
-    except Exception:
-        pass
-    # update uploads meta
-    uploads = [u for u in uploads if u.get('dni') != dni]
-    write_json(UPLOADS_META_FILE, uploads)
-    # remove employee
-    if dni in employees:
-        del employees[dni]
-        write_json(EMPLOYEES_FILE, employees)
+        PHOTO_STORAGE.delete(dni, u.get('filename', ''))
+    PHOTO_STORAGE.delete_all_for_dni(dni)
+    storage.delete_employee(dni)
     return emp.get('name') if isinstance(emp, dict) else None
 
 @app.route('/master/empleados/eliminar', methods=['POST'])
@@ -1066,7 +1068,8 @@ if __name__ == '__main__':
 </html>""")
             print(f"Created missing template: {master_login_template}")
         print(f"Directorio de plantillas: {TEMPLATES_DIR}")
-        print(f"Carpeta de subidas: {os.path.abspath(UPLOAD_FOLDER)}")
+        print(f"Almacenamiento de fotos: {PHOTO_STORAGE.backend_name}")
+        print(f"Carpeta local (respaldo/migración): {os.path.abspath(UPLOAD_FOLDER)}")
         print("\nURLs disponibles:")
         print(f"- Página principal: http://localhost:5000/")
         print(f"- Login empleados: http://localhost:5000/login")
