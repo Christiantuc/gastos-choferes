@@ -1,18 +1,35 @@
-# Evita que Render (plan gratis) duerma la app por inactividad.
-# Render apaga el servicio tras ~15 min sin visitas; este ping corre cada 10 min.
+# Mantiene despierta la app en Render (plan gratis se apaga tras ~15 min sin visitas).
 name: Keep Render Alive
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Despertar app en Render
+      - name: Despertar Render
         run: |
-          curl -fsS --max-time 90 \
-            "https://gastos-choferes.onrender.com/health" \
-            | grep -q '"status"'
+          set -e
+          echo "=== Ping /health ==="
+          for attempt in 1 2 3; do
+            if curl -fsS --max-time 120 "https://gastos-choferes.onrender.com/health" | grep -q '"status"'; then
+              echo "health OK"
+              break
+            fi
+            echo "health intento $attempt falló"
+            sleep 10
+          done
+          echo "=== Ping /login ==="
+          for attempt in 1 2 3; do
+            if curl -fsS --max-time 120 -o /dev/null "https://gastos-choferes.onrender.com/login"; then
+              echo "login OK"
+              exit 0
+            fi
+            echo "login intento $attempt falló"
+            sleep 10
+          done
+          exit 1
