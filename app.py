@@ -18,28 +18,32 @@ except ImportError:
 
 try:
     from PIL import Image
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
+    Image = None
+
+def _ensure_heif_support():
+    if not HAS_PIL:
+        return
     try:
         import pillow_heif
         pillow_heif.register_heif_opener()
     except ImportError:
         pass
-    HAS_PIL = True
-except ImportError:
-    HAS_PIL = False
 
 # Ensure templates are found regardless of current working directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+IS_PRODUCTION = os.environ.get('RENDER') == 'true'
 os.chdir(BASE_DIR)
 
-# Print debug information
-print("\n=== Debug Information ===")
-print(f"Python version: {sys.version}")
-print(f"Current working directory: {os.getcwd()}")
-print(f"Script directory: {os.path.dirname(os.path.abspath(__file__))}")
-print(f"Templates directory: {TEMPLATES_DIR}")
-print("Contents of templates directory:", os.listdir(TEMPLATES_DIR) if os.path.exists(TEMPLATES_DIR) else "Templates directory not found!")
-print("======================\n")
+if not IS_PRODUCTION:
+    print("\n=== Debug Information ===")
+    print(f"Python version: {sys.version}")
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Templates directory: {TEMPLATES_DIR}")
+    print("======================\n")
 
 # Ensure templates directory exists
 os.makedirs(TEMPLATES_DIR, exist_ok=True)
@@ -67,7 +71,7 @@ if os.path.isdir(_legacy_uploads):
 
 PHOTO_STORAGE = photo_storage.create_photo_storage(UPLOAD_FOLDER)
 _migrated = photo_storage.migrate_local_to_cloud(UPLOAD_FOLDER, PHOTO_STORAGE)
-if _migrated:
+if _migrated and not IS_PRODUCTION:
     print(f"Fotos migradas a {PHOTO_STORAGE.backend_name}: {_migrated}")
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'webp', 'heic', 'heif'}
@@ -102,6 +106,7 @@ def allowed_file(filename):
 
 def process_upload_image(file, ext: str) -> tuple[bytes, str, str]:
     """Procesa la imagen y devuelve (bytes, extensión_final, content_type)."""
+    _ensure_heif_support()
     if HAS_PIL and ext in ('heic', 'heif', 'jpg', 'jpeg', 'png', 'webp'):
         try:
             img = Image.open(file.stream)
