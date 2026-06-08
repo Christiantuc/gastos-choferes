@@ -409,10 +409,7 @@ def master_root():
         return redirect(url_for('master_audit'))
     return redirect(url_for('master_login'))
 
-@app.route('/admin')
-def admin_dashboard():
-    if not require_admin():
-        return redirect(url_for('admin_login'))
+def _admin_dashboard_list(sort_by='name', sort_dir='asc'):
     employees = storage.get_employees()
     uploads = storage.get_uploads()
     counts = {}
@@ -429,13 +426,39 @@ def admin_dashboard():
         {
             'dni': dni,
             'name': data.get('name'),
-            'phone': data.get('phone'),
+            'phone': data.get('phone') or '',
             'count': counts.get(dni, 0),
-            'total': totals.get(dni, 0.0)
+            'total': totals.get(dni, 0.0),
         } for dni, data in employees.items()
     ]
-    employees_list.sort(key=lambda x: x['name'] or '')
-    return render_template('admin_dashboard.html', employees=employees_list)
+    key_map = {
+        'name': lambda x: (x.get('name') or '').lower(),
+        'dni': lambda x: x.get('dni') or '',
+        'phone': lambda x: x.get('phone') or '',
+        'count': lambda x: int(x.get('count') or 0),
+        'total': lambda x: float(x.get('total') or 0.0),
+    }
+    if sort_by not in key_map:
+        sort_by = 'name'
+    if sort_dir not in ('asc', 'desc'):
+        sort_dir = 'asc'
+    employees_list.sort(key=key_map[sort_by], reverse=(sort_dir == 'desc'))
+    return employees_list, sort_by, sort_dir
+
+
+@app.route('/admin')
+def admin_dashboard():
+    if not require_admin():
+        return redirect(url_for('admin_login'))
+    sort_by = (request.args.get('sort') or 'name').strip().lower()
+    sort_dir = (request.args.get('dir') or 'asc').strip().lower()
+    employees_list, sort_by, sort_dir = _admin_dashboard_list(sort_by, sort_dir)
+    return render_template(
+        'admin_dashboard.html',
+        employees=employees_list,
+        sort_by=sort_by,
+        sort_dir=sort_dir,
+    )
 
 
 @app.route('/admin/export')
