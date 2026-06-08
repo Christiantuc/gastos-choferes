@@ -651,7 +651,7 @@ def master_login():
         return render_template('master_login.html', error='Clave incorrecta')
     return render_template('master_login.html')
 
-def _employees_manage_list():
+def _employees_manage_list(sort_by='name', sort_dir='asc'):
     employees_data = storage.get_employees()
     employees_list = [
         {
@@ -661,22 +661,40 @@ def _employees_manage_list():
         }
         for dni, data in employees_data.items()
     ]
-    employees_list.sort(key=lambda x: x['name'] or '')
+    key_map = {
+        'name': lambda x: (x.get('name') or '').lower(),
+        'dni': lambda x: x.get('dni') or '',
+        'cuil': lambda x: x.get('cuil') or '',
+    }
+    if sort_by not in key_map:
+        sort_by = 'name'
+    if sort_dir not in ('asc', 'desc'):
+        sort_dir = 'asc'
+    employees_list.sort(key=key_map[sort_by], reverse=(sort_dir == 'desc'))
     return employees_list
 
 
-def _render_manage_employees(portal_label, back_endpoint, back_label,
+def _render_manage_employees(portal_label, back_endpoint, back_label, list_endpoint,
                              add_endpoint, edit_endpoint, delete_endpoint, export_endpoint):
+    sort_by = (request.args.get('sort') or 'name').strip().lower()
+    sort_dir = (request.args.get('dir') or 'asc').strip().lower()
+    if sort_by not in ('name', 'dni', 'cuil'):
+        sort_by = 'name'
+    if sort_dir not in ('asc', 'desc'):
+        sort_dir = 'asc'
     return render_template(
         'manage_employees.html',
         portal_label=portal_label,
         back_endpoint=back_endpoint,
         back_label=back_label,
+        list_endpoint=list_endpoint,
         add_endpoint=add_endpoint,
         edit_endpoint=edit_endpoint,
         delete_endpoint=delete_endpoint,
         export_endpoint=export_endpoint,
-        employees=_employees_manage_list(),
+        sort_by=sort_by,
+        sort_dir=sort_dir,
+        employees=_employees_manage_list(sort_by, sort_dir),
     )
 
 
@@ -771,6 +789,7 @@ def admin_employees():
         portal_label='Administrador',
         back_endpoint='admin_dashboard',
         back_label='Volver al panel',
+        list_endpoint='admin_employees',
         add_endpoint='admin_add_employee',
         edit_endpoint='admin_update_employee',
         delete_endpoint='admin_delete_employee_post',
@@ -824,6 +843,7 @@ def master_employees():
         portal_label='Usuario Maestro',
         back_endpoint='master_audit',
         back_label='Volver a Auditoría',
+        list_endpoint='master_employees',
         add_endpoint='master_add_employee',
         edit_endpoint='master_update_employee',
         delete_endpoint='master_delete_employee_post',
