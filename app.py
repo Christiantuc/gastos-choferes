@@ -651,69 +651,65 @@ def master_login():
         return render_template('master_login.html', error='Clave incorrecta')
     return render_template('master_login.html')
 
-# Vista dedicada para gestionar empleados
-@app.route('/master/empleados')
-def master_employees():
-    if not require_master():
-        return redirect(url_for('master_login'))
+def _employees_manage_list():
     employees_data = storage.get_employees()
     employees_list = [
-        {'dni': dni, 'name': (data.get('name') if isinstance(data, dict) else None) or '', 'cuil': (data.get('cuil') if isinstance(data, dict) else None) or ''}
+        {
+            'dni': dni,
+            'name': (data.get('name') if isinstance(data, dict) else None) or '',
+            'cuil': (data.get('cuil') if isinstance(data, dict) else None) or '',
+        }
         for dni, data in employees_data.items()
     ]
     employees_list.sort(key=lambda x: x['name'] or '')
+    return employees_list
+
+
+def _render_manage_employees(portal_label, back_endpoint, back_label,
+                             add_endpoint, edit_endpoint, delete_endpoint, export_endpoint):
     return render_template(
-        'master_audit.html',
-        entries=[],
-        start='',
-        end='',
-        dni='',
-        action='',
-        employees=employees_list,
-        view='employees',
+        'manage_employees.html',
+        portal_label=portal_label,
+        back_endpoint=back_endpoint,
+        back_label=back_label,
+        add_endpoint=add_endpoint,
+        edit_endpoint=edit_endpoint,
+        delete_endpoint=delete_endpoint,
+        export_endpoint=export_endpoint,
+        employees=_employees_manage_list(),
     )
 
-# Alta de empleado por Master
-@app.route('/master/empleados/agregar', methods=['POST'])
-def master_add_employee():
-    if not require_master():
-        return redirect(url_for('master_login'))
+
+def _add_employee_from_form(actor_role: str) -> bool:
     name = (request.form.get('name') or '').strip()
     dni_raw = (request.form.get('dni') or '').strip()
     cuil_raw = (request.form.get('cuil') or '').strip()
-    # Normalizar DNI/CUIL a solo dígitos
     dni = ''.join(ch for ch in dni_raw if ch.isdigit())
     cuil = ''.join(ch for ch in cuil_raw if ch.isdigit())
     if not name or not dni or not cuil:
-        # Podríamos pasar un mensaje de error vía querystring o flash; por simplicidad redirigimos
-        return redirect(url_for('master_employees'))
+        return False
     existing = storage.get_employee(dni)
     phone = existing.get('phone') if existing else None
     storage.save_employee(dni, {'name': name, 'phone': phone, 'cuil': cuil})
-    log_activity('add_employee', 'master', None, None, {'dni': dni, 'name': name, 'cuil': cuil})
-    return redirect(url_for('master_employees'))
+    log_activity('add_employee', actor_role, None, None, {'dni': dni, 'name': name, 'cuil': cuil})
+    return True
 
-@app.route('/master/empleados/editar', methods=['POST'])
-def master_update_employee():
-    if not require_master():
-        return redirect(url_for('master_login'))
+
+def _update_employee_from_form(actor_role: str) -> bool:
     original_dni = (request.form.get('original_dni') or '').strip()
     name = (request.form.get('name') or '').strip()
     new_dni_raw = (request.form.get('dni') or '').strip()
     new_cuil_raw = (request.form.get('cuil') or '').strip()
-    # Normalizar DNI/CUIL
     new_dni = ''.join(ch for ch in new_dni_raw if ch.isdigit())
     new_cuil = ''.join(ch for ch in new_cuil_raw if ch.isdigit())
-    if not original_dni:
-        return redirect(url_for('master_employees'))
-    if not name or not new_dni or not new_cuil:
-        return redirect(url_for('master_employees'))
+    if not original_dni or not name or not new_dni or not new_cuil:
+        return False
     employees = storage.get_employees()
     existing = employees.get(original_dni) if isinstance(employees, dict) else None
     if not existing:
-        return redirect(url_for('master_employees'))
+        return False
     if new_dni != original_dni and new_dni in employees:
-        return redirect(url_for('master_employees'))
+        return False
     phone = existing.get('phone') if isinstance(existing, dict) else None
     new_record = {**existing} if isinstance(existing, dict) else {}
     new_record.update({'name': name, 'phone': phone, 'cuil': new_cuil})
@@ -722,7 +718,7 @@ def master_update_employee():
         storage.delete_employee(original_dni)
         storage.update_upload_dni(original_dni, new_dni)
         PHOTO_STORAGE.rename_dni(original_dni, new_dni)
-        log_activity('update_employee', 'master', None, None, {
+        log_activity('update_employee', actor_role, None, None, {
             'original_dni': original_dni,
             'new_dni': new_dni,
             'name': name,
@@ -732,11 +728,122 @@ def master_update_employee():
         updated = {**existing} if isinstance(existing, dict) else {}
         updated.update({'name': name, 'phone': phone, 'cuil': new_cuil})
         storage.save_employee(original_dni, updated)
-        log_activity('update_employee', 'master', None, None, {
+        log_activity('update_employee', actor_role, None, None, {
             'dni': original_dni,
             'name': name,
             'cuil': new_cuil,
         })
+    return True
+
+
+def _export_employees_csv():
+    employees = storage.get_employees()
+    import csv
+    from io import StringIO
+    si = StringIO()
+    si.write('\ufeff')
+    si.write('sep=;\n')
+    writer = csv.writer(si, delimiter=';')
+    writer.writerow(['dni', 'name', 'cuil', 'phone', 'record_seq'])
+    if isinstance(employees, dict):
+        for dni, data in employees.items():
+            if isinstance(data, dict):
+                writer.writerow([
+                    dni,
+                    data.get('name') or '',
+                    data.get('cuil') or '',
+                    data.get('phone') or '',
+                    data.get('record_seq') if data.get('record_seq') is not None else '',
+                ])
+    ts = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+    return Response(
+        si.getvalue(),
+        mimetype='text/csv; charset=utf-8',
+        headers={'Content-Disposition': f'attachment; filename="empleados_{ts}.csv"'},
+    )
+
+
+@app.route('/admin/empleados')
+def admin_employees():
+    if not require_admin():
+        return redirect(url_for('admin_login'))
+    return _render_manage_employees(
+        portal_label='Administrador',
+        back_endpoint='admin_dashboard',
+        back_label='Volver al panel',
+        add_endpoint='admin_add_employee',
+        edit_endpoint='admin_update_employee',
+        delete_endpoint='admin_delete_employee_post',
+        export_endpoint='admin_employees_export',
+    )
+
+
+@app.route('/admin/empleados/agregar', methods=['POST'])
+def admin_add_employee():
+    if not require_admin():
+        return redirect(url_for('admin_login'))
+    _add_employee_from_form('admin')
+    return redirect(url_for('admin_employees'))
+
+
+@app.route('/admin/empleados/editar', methods=['POST'])
+def admin_update_employee():
+    if not require_admin():
+        return redirect(url_for('admin_login'))
+    _update_employee_from_form('admin')
+    return redirect(url_for('admin_employees'))
+
+
+@app.route('/admin/empleados/eliminar', methods=['POST'])
+def admin_delete_employee_post():
+    if not require_admin():
+        return redirect(url_for('admin_login'))
+    dni = request.form.get('dni', '').strip()
+    if not dni:
+        return redirect(url_for('admin_employees'))
+    name = _delete_all_for_dni(dni)
+    log_activity('delete_employee', 'admin', None, None, {
+        'dni': dni,
+        'employee_name': name,
+    })
+    return redirect(url_for('admin_employees'))
+
+
+@app.route('/admin/empleados/export')
+def admin_employees_export():
+    if not require_admin():
+        return redirect(url_for('admin_login'))
+    return _export_employees_csv()
+
+
+@app.route('/master/empleados')
+def master_employees():
+    if not require_master():
+        return redirect(url_for('master_login'))
+    return _render_manage_employees(
+        portal_label='Usuario Maestro',
+        back_endpoint='master_audit',
+        back_label='Volver a Auditoría',
+        add_endpoint='master_add_employee',
+        edit_endpoint='master_update_employee',
+        delete_endpoint='master_delete_employee_post',
+        export_endpoint='master_employees_export',
+    )
+
+
+@app.route('/master/empleados/agregar', methods=['POST'])
+def master_add_employee():
+    if not require_master():
+        return redirect(url_for('master_login'))
+    _add_employee_from_form('master')
+    return redirect(url_for('master_employees'))
+
+
+@app.route('/master/empleados/editar', methods=['POST'])
+def master_update_employee():
+    if not require_master():
+        return redirect(url_for('master_login'))
+    _update_employee_from_form('master')
     return redirect(url_for('master_employees'))
 
 def _format_ts(ts: str):
@@ -871,36 +978,7 @@ def master_export():
 def master_employees_export():
     if not require_master():
         return redirect(url_for('master_login'))
-    employees = storage.get_employees()
-    import csv
-    from io import StringIO
-    from flask import Response
-    si = StringIO()
-    # Escribir BOM y directiva de separador para Excel
-    si.write('\ufeff')
-    si.write('sep=;\n')
-    writer = csv.writer(si, delimiter=';')
-    writer.writerow(['dni','name','cuil','phone','record_seq'])
-    if isinstance(employees, dict):
-        for dni, data in employees.items():
-            if isinstance(data, dict):
-                name = data.get('name') or ''
-                cuil = data.get('cuil') or ''
-                phone = data.get('phone') or ''
-                record_seq = data.get('record_seq') if data.get('record_seq') is not None else ''
-            else:
-                name = ''
-                cuil = ''
-                phone = ''
-                record_seq = ''
-            writer.writerow([dni, name, cuil, phone, record_seq])
-    output = si.getvalue()
-    ts = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
-    return Response(
-        output,
-        mimetype='text/csv; charset=utf-8',
-        headers={'Content-Disposition': f'attachment; filename="empleados_{ts}.csv"'}
-    )
+    return _export_employees_csv()
 
 def _delete_upload(upload_id=None, filename=None, requester_dni=None, admin=False):
     target = None
@@ -937,13 +1015,13 @@ def master_delete_employee_post():
         return redirect(url_for('master_login'))
     dni = request.form.get('dni', '').strip()
     if not dni:
-        return redirect(url_for('master_audit'))
+        return redirect(url_for('master_employees'))
     name = _delete_all_for_dni(dni)
     log_activity('delete_employee', 'master', None, None, {
         'dni': dni,
         'employee_name': name,
     })
-    return redirect(url_for('master_audit'))
+    return redirect(url_for('master_employees'))
 
 
 @app.route('/empleado/eliminar', methods=['POST'])
